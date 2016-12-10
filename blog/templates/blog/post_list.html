@@ -8,16 +8,13 @@
        </div>
 
        <div>
-           <h2><a href=""> Mój pierwszy post </a></h2>
-           <p>Opublikowany: 10.12.2016, 15:40</p>
-           <p>Musisz przestrzegać zasad zamykania znaczników i zagnieżdżania elementów - przeciwnym razie przeglądarka może mieć problem z ich poprawnym zinterpretowaniem i Twoja strona będzie wyświetlać się niepoprawnie.</p>
+          {% for post in posts %}
        </div>
-
-       <div>
-           <h2><a href=""> Mój drugi post </a></h2>
-           <p>Opublikowany: 10.12.2016 15:41</p>
-           <p>Musisz przestrzegać zasad zamykania znaczników i zagnieżdżania elementów</p>
-       </div>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>Opublikowany: {{ post.published_date }}</p>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+          {% endfor %}
 
    </body>
 </html>
